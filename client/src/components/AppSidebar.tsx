@@ -97,14 +97,14 @@ const AppSidebar = ({ userType }: AppSidebarProps) => {
         </div>
       </SidebarHeader>
 
-      <SidebarContent className="px-2 py-3">
+      <SidebarContent className="px-2 py-3  ">
         <SidebarMenu>
           {navLinks.map((link) => {
             const isActive = pathname.startsWith(link.href);
             const Icon = link.icon;
 
             return (
-              <SidebarMenuItem key={link.href}>
+              <SidebarMenuItem key={link.href} className="">
                 <SidebarMenuButton
                   asChild
                   isActive={isActive}
@@ -120,7 +120,7 @@ const AppSidebar = ({ userType }: AppSidebarProps) => {
                           "h-5 w-5",
                           isActive
                             ? "text-primary"
-                            : "text-gray-600 hover:text-gray-900"
+                            : "text-gray-600   hover:text-gray-900"
                         )}
                       />
                       {open && (

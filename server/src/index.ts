@@ -8,7 +8,7 @@ import morgan from "morgan" // helps in logging the request in the console
 import { authMiddleware } from "./middleware/authMiddleware"
 import tenantRouter from "./routes/tenantRoutes"
 import managerRouter from "./routes/managerRoutes"
-
+import propertyRouter from "./routes/propertyRoutes"
 dotenv.config()
 const app= express()
 app.use(bodyParser.json())
@@ -23,6 +23,7 @@ app.get('/', authMiddleware(["manager"]),(req,res)=>{
     res.send("this is home  route, bbbbband welcome sir i dont know man")
 });
 
+app.use("/properties",propertyRouter)
 app.use("/tenants", authMiddleware(["tenant"]),tenantRouter )
 app.use("/managers", authMiddleware(["manager"]),managerRouter)
  
