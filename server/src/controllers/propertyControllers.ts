@@ -206,7 +206,9 @@ export const createProperty = async (
         managerCognitoId,
         ...propertyData
       } = req.body;
-  
+       
+
+      //this will contain the location/links of all the ulodaed picturse,in s3
       const photoUrls = await Promise.all(
         files.map(async (file) => {
           const uploadParams = {
@@ -237,7 +239,7 @@ export const createProperty = async (
       ).toString()}`;
       const geocodingResponse = await axios.get(geocodingUrl, {
         headers: {
-          "User-Agent": "RealEstateApp (justsomedummyemail@gmail.com",
+          "User-Agent": "RealEstateApp (flashjhony2@gmail.com@gmail.com",
         },
       });
       const [longitude, latitude] =
